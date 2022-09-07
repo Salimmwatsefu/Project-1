@@ -112,7 +112,7 @@ benz.addEventListener("click", () =>{
     fetch("http://localhost:3000/values/1")
     .then(function(resp){
     return resp.json();
-    })
+    });
     .then(function(data){
     model1.innerHTML = data.name;
     price1.innerHTML = data.price;
@@ -149,7 +149,7 @@ bmw.addEventListener("click", () =>{
     model1.innerHTML = data.name;
     price1.innerHTML = data.price;
     box1.src = data.image;
-    })
+    });
 
     box2.src = "./photos/bmw2.jpeg";
     box3.src = "./photos/bmw3.jpeg";
@@ -188,7 +188,7 @@ porsche.addEventListener("click", () =>{
     model1.innerHTML = data.name;
     price1.innerHTML = data.price;
     box1.src = data.image;
-    })
+    });
 
     box2.src = "./photos/p2.jpg";
     box3.src = "./photos/p3.jpg";
