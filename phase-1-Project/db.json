@@ -1,0 +1,25 @@
+{
+  "values": [
+    {
+      "id": 1,
+      "name": "2015 CLA 200",
+      "price": "KES 7,800,000",
+      "image": "./photos/merc1.jpg"
+
+    },
+    {
+      "id": 2,
+      "name": "F36 BMW 435i",
+      "price": "KES 5,200,000 ",
+      "image": "./photos/bmw1.jpeg"
+      
+    },
+    {
+      "id": 3,
+      "name": "2015 PORSCHE CAYENNE TURBO",
+      "price": "KES 6,250,000",
+      "image": "./photos/p1.jpeg"
+      
+    }
+  ]
+}

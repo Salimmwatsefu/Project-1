@@ -24,6 +24,7 @@ body{
     margin-left: 50px;
     margin-right: 50px;
 }
+/*Nav Bar styling */
 header{
     display: block;
     width: 100%;
@@ -99,12 +100,14 @@ header.shadow #search-icon{
 div{
     padding: 50px 0 20px;
 }
+/*Advertisment styling */
 .home{
     height: 100vh;
     align-items: center;
     background: url(./photos/home1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    transition: 1s;
 }
 .home-text{
     padding-left: 130px;
@@ -126,6 +129,7 @@ div{
     margin: 8px 0 20px ;
     background: transparent;
 }
+/*discover now button*/
 .btn{
     padding: 10px 22px;
     background: var(--main-color);
@@ -135,6 +139,7 @@ div{
 .btn:hover{
     background: darkblue;
 }
+/*.heading section*/
 .heading{
     text-align: center;
 }
@@ -147,6 +152,7 @@ div{
     font-size: 15px;
     font-weight: 400;
 }
+/* cars on sale section*/
 .container .ibox img {
     width: 1;
 

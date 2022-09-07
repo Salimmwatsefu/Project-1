@@ -1,4 +1,4 @@
-
+const baseUrl = "http://localhost:3000/values/1";;
 
 const header = document.getElementById("header");
 const interior = document.querySelector("img")
@@ -24,17 +24,17 @@ const price3 = document.querySelector("#box3 span");
 const price4 = document.querySelector("#box4 span");
 const price5 = document.querySelector("#box5 span");
 const price6 = document.querySelector("#box6 span");
+const message = document.querySelector("#message textarea");
+const bigHeading = document.querySelector(".heading span");
+console.
 
-document.addEventListener("DOMContentLoaded", () => {})
-
-
+document.addEventListener("DOMContentLoaded", () => {});
 
 //search-box
 const search = document.querySelector(".search-box");
 const search1 = document.querySelector(".search-box #search1");
 function Search(item){
-let collection = document.getElementsByClassName("cars")
-console.log(collection)
+let collection = document.getElementsByClassName("cars");
 for (i = 0; i < collection.length; i++){
     if (((collection[i].innerHTML).toLowerCase()).indexOf(item) > -1) {
         collection[i].style.display = "block";
@@ -79,6 +79,7 @@ page1.addEventListener("click", () =>{
     line1.innerHTML = "WELCOME!";
     line2.innerHTML = "YOUR NEW" + "<br/>" + "<span>GERMAN</span> MACHINE" + "<br/>" + "MIGHT BE CLOSER THAN YOU THINK"
     interiorText.innerHTML = "Paid partnership with Volkswagen, Mercedes, Audi and BMW";
+    bigHeading.innerHTML = "Read Our Blogs";
     model1.innerHTML = "How I got My First BMW";
     price1.innerHTML = "";
     model2.innerHTML = "Why Our Fabrics, Designed By Porsche";
@@ -87,7 +88,7 @@ page1.addEventListener("click", () =>{
     price3.innerHTML = "";
     model4.innerHTML = "Career Opportunities @Imports By Salim";
     price4.innerHTML = "";
-    model5.innerHTML = "";
+    model5.innerHTML = "Meet Our Team @ImportsBySalim";
     price5.innerHTML = "";
     model6.innerHTML = "Why The Switch To Electric Cars";
     price6.innerHTML = "";
@@ -97,7 +98,7 @@ const benz = document.getElementById("mercedes");
 benz.addEventListener("click", () =>{
     home.style.background = "url(./photos/cClass.jpg)";
     interior.src = "./photos/C-Interior.jpg";
-    box1.src = "./photos/merc1.jpg";
+
     box2.src = "./photos/merc2.jpg";
     box3.src = "./photos/merc3.jpeg";
     box4.src = "./photos/merc4.jpeg";
@@ -106,9 +107,20 @@ benz.addEventListener("click", () =>{
     line1.innerHTML ="THE C200";
     line2.innerHTML = "KNOWS HOME" + "<br/>" + "AND YOUR HABITS";
     interiorText.innerHTML = "BEAUTIFUL DESIGN, CUTTING EDGE TECHNOLOGY";
-    model1.innerHTML = "CLA 250 ,(2014)";
-    price1.innerHTML = "KES 4,350,000";
-    model2.innerHTML = "G WAGON ,(2018)";
+    bigHeading.innerHTML = "AVAILABLE CARS";
+    //fetching data from db.json
+    fetch("http://localhost:3000/values/1")
+    .then(function(resp){
+    return resp.json();
+    })
+    .then(function(data){
+    //console.log(data.name)
+    model1.innerHTML = data.name;
+    price1.innerHTML = data.price;
+    box1.src = data.image;
+    })
+    //continuation without fetching data
+    model2.innerHTML = "2015 G WAGON "
     price2.innerHTML = "KES 16,799,999";
     model3.innerHTML = "C 200 , (2015)";
     price3.innerHTML = "KES 3,450,000";
@@ -118,6 +130,7 @@ benz.addEventListener("click", () =>{
     price5.innerHTML = "KES 6,830,000";
     model6.innerHTML = "E 350 , (2015)";
     price6.innerHTML = "KES 2,799,999";
+    
 })
 
 //bmw-details
@@ -126,7 +139,16 @@ const bmw = document.getElementById("bmw");
 bmw.addEventListener("click", () =>{
     home.style.background = "url(./photos/bmwhome.jpg)";
     interior.src = "./photos/binterior.jpg";
-    box1.src = "./photos/bmw1.jpeg";
+    //fetching BMW data drom db.json
+    fetch("http://localhost:3000/values/2")
+    .then(function(resp){
+    return resp.json();
+    })
+    .then(function(data){
+    model1.innerHTML = data.name;
+    price1.innerHTML = data.price;
+    box1.src = data.image;
+    })
     box2.src = "./photos/bmw2.jpeg";
     box3.src = "./photos/bmw3.jpeg";
     box4.src = "./photos/bmw4.jpeg";
@@ -135,8 +157,7 @@ bmw.addEventListener("click", () =>{
     line1.innerHTML = "THE X7";
     line2.innerHTML = "THE NEW BMW X7 M60i xDRIVE." +"<br/>" + "ALL ELECTRIC"
     interiorText.innerHTML = "THE PERFECT COCKPIT";
-    model1.innerHTML = "F36 BMW 435i";
-    price1.innerHTML = "5,200,000";
+    bigHeading.innerHTML = "AVAILABLE CARS";
     model2.innerHTML = "2015 BMW 523i";
     price2.innerHTML = "KES 2,990,000";
     model3.innerHTML = "2015 BMW X3 XDrive";
@@ -155,7 +176,16 @@ const porsche = document.getElementById("porsche");
 porsche.addEventListener("click", () =>{
     home.style.background = "url(./photos/porsche2.webp)";
     interior.src = "./photos/pinterior.jpeg";
-    box1.src = "./photos/p1.jpeg";
+    //fetching audi data
+    fetch("http://localhost:3000/values/3")
+    .then(function(resp){
+    return resp.json();
+    })
+    .then(function(data){
+    model1.innerHTML = data.name;
+    price1.innerHTML = data.price;
+    box1.src = data.image;
+    })
     box2.src = "./photos/p2.jpg";
     box3.src = "./photos/p3.jpg";
     box4.src = "./photos/p4.jpg";
@@ -164,8 +194,7 @@ porsche.addEventListener("click", () =>{
     line1.innerHTML = "<span>THE CAYENNE</span>"
     line2.innerHTML = "Turbo GT";
     interiorText.innerHTML = "A full equiped interior";
-    model1.innerHTML = "2015 PORSCHE CAYENNE TURBO";
-    price1.innerHTML = "KES 6,250,000";
+    bigHeading.innerHTML = "AVAILABLE CARS";
     model2.innerHTML = "2018 PORSCHE CAYENNE";
     price2.innerHTML = "KES 8,999,999";
     model3.innerHTML = "2016 PORSCHE CAYENNE";
@@ -195,6 +224,7 @@ audi.addEventListener("click", () =>{
     line1.innerHTML = "THE RS5"
     line2.innerHTML = "#IT'S ALL ABOUT POWER#"
     interiorText.innerHTML = "Standard quattro® sport rear differential offers precise handling when accelerating through a corner, actively distributing torque between rear axle wheels—where and when it’s needed most.";
+    bigHeading.innerHTML = "AVAILABLE CARS";
     model1.innerHTML = "2014 AUDI Q5";
     price1.innerHTML = "KES 3,499,999";
     model2.innerHTML = "2015 AUDI SQ5";
@@ -224,6 +254,7 @@ vw.addEventListener("click", () =>{
     line1.innerHTML = "GOLF GTI";
     line2.innerHTML = "PRODUCING" + "<br/>" + "301 HP";
     interiorText.innerHTML = "HEATED SPORT SEATS AND BOSE' SOUND SYSTEM";
+    bigHeading.innerHTML = "AVAILABLE CARS";
     model1.innerHTML = "2015 VW GOLF GTI";
     price1.innerHTML = "KES 2,500,000";
     model2.innerHTML = "2014 VW TOUAREG";
