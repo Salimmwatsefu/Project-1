@@ -122,13 +122,13 @@ benz.addEventListener("click", () =>{
     //continuation without fetching data
     model2.innerHTML = "2015 G WAGON "
     price2.innerHTML = "KES 16,799,999";
-    model3.innerHTML = "C 200 , (2015)";
+    model3.innerHTML = "2015 C 200";
     price3.innerHTML = "KES 3,450,000";
-    model4.innerHTML = "E 250 , (2014)";
+    model4.innerHTML = " 2014 E 250";
     price4.innerHTML = "KES 4,599,999";
-    model5.innerHTML = "ML 350 ,(2014)";
+    model5.innerHTML = "2014 ML 350";
     price5.innerHTML = "KES 6,830,000";
-    model6.innerHTML = "E 350 , (2015)";
+    model6.innerHTML = "2015 giE 350";
     price6.innerHTML = "KES 2,799,999";
     
 })
@@ -159,13 +159,13 @@ bmw.addEventListener("click", () =>{
     interiorText.innerHTML = "THE PERFECT COCKPIT";
     bigHeading.innerHTML = "AVAILABLE CARS";
     model2.innerHTML = "2015 BMW 523i";
-    price2.innerHTML = "KES 2,990,000";
+    price2.innerHTML = "KES 2,890,000";
     model3.innerHTML = "2015 BMW X3 XDrive";
-    price3.innerHTML = "KES 3,950,000";
+    price3.innerHTML = "KES 3,250,000";
     model4.innerHTML = "2008 BMW X5";
-    price4.innerHTML = "KES 1,799,999";
+    price4.innerHTML = "KES 1,999,999";
     model5.innerHTML = "2014 BMW M235i F22";
-    price5.innerHTML = "KES 3,699,999";
+    price5.innerHTML = "KES 3,499,999";
     model6.innerHTML = "2012 BMW X3";
     price6.innerHTML = "KES 2,450,000";
 })
