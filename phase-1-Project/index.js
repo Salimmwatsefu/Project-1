@@ -26,9 +26,6 @@ const price5 = document.querySelector("#box5 span");
 const price6 = document.querySelector("#box6 span");
 const message = document.querySelector("#message textarea");
 const bigHeading = document.querySelector(".heading span");
-console.
-
-document.addEventListener("DOMContentLoaded", () => {});
 
 //search-box
 const search = document.querySelector(".search-box");
