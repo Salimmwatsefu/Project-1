@@ -112,12 +112,12 @@ benz.addEventListener("click", () =>{
     fetch("http://localhost:3000/values/1")
     .then(function(resp){
     return resp.json();
-    });
+    })
     .then(function(data){
     model1.innerHTML = data.name;
     price1.innerHTML = data.price;
     box1.src = data.image;
-    })
+    });
 
     //continuation without fetching data
     model2.innerHTML = "2015 G WAGON "
