@@ -11,7 +11,6 @@ const box6 = document.querySelector("#box6 img");
 const home = document.getElementById("home");
 const line1= document.querySelector(".home-text h1");
 const line2 = document.querySelector(".home-text p");
-const interiorText = document.querySelector(".ibox h4");
 const model1 = document.querySelector("#box1 h3");
 const model2 = document.querySelector("#box2 h3");
 const model3 = document.querySelector("#box3 h3");
@@ -26,6 +25,7 @@ const price5 = document.querySelector("#box5 span");
 const price6 = document.querySelector("#box6 span");
 const message = document.querySelector("#message textarea");
 const bigHeading = document.querySelector(".heading span");
+const interiorText = document.querySelector(".ibox h4");
 
 document.addEventListener("DOMContentLoaded", () => {
 });
