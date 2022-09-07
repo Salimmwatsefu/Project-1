@@ -128,7 +128,7 @@ benz.addEventListener("click", () =>{
     price4.innerHTML = "KES 4,599,999";
     model5.innerHTML = "2014 ML 350";
     price5.innerHTML = "KES 6,830,000";
-    model6.innerHTML = "2015 giE 350";
+    model6.innerHTML = "2015 GLE 350";
     price6.innerHTML = "KES 2,799,999";
     
 })
