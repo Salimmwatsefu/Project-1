@@ -5,9 +5,9 @@ HTML, CSS , JavaScript and a local API to build the website
 As a user;
 In this car dealership website ,you can click on the names of the car brands in the navigation bar ,it will change to the chosen page and the first thing one sees is a photo of a car which is being advertised and on scrolling down you will se some of the advertised car's features.
 
-On scrolling down further , you can see the available cars in stock and their prices. When you hover over the photos it zooms in.
+On scrolling down further , you can see the available cars in stock and their prices. When you hover over the photos zooms in.
 
-When you click on the search icon, a search bar appears and you can search for the car brand you want to buy among the 5 brands, and one can also check out the available car brands for sale and the prices but cannot view all the details yet as it is not yet a fully functional website.
+When you click on the search icon, a search bar appears and you can search for the car brand you want to buy among the 5 brands.
 
 On the home page is a welcome message and further down a blog section where one can read more about the company.
 
