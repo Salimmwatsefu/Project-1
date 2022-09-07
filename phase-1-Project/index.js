@@ -114,11 +114,11 @@ benz.addEventListener("click", () =>{
     return resp.json();
     })
     .then(function(data){
-    //console.log(data.name)
     model1.innerHTML = data.name;
     price1.innerHTML = data.price;
     box1.src = data.image;
     })
+
     //continuation without fetching data
     model2.innerHTML = "2015 G WAGON "
     price2.innerHTML = "KES 16,799,999";
@@ -139,6 +139,7 @@ const bmw = document.getElementById("bmw");
 bmw.addEventListener("click", () =>{
     home.style.background = "url(./photos/bmwhome.jpg)";
     interior.src = "./photos/binterior.jpg";
+
     //fetching BMW data drom db.json
     fetch("http://localhost:3000/values/2")
     .then(function(resp){
@@ -149,6 +150,7 @@ bmw.addEventListener("click", () =>{
     price1.innerHTML = data.price;
     box1.src = data.image;
     })
+
     box2.src = "./photos/bmw2.jpeg";
     box3.src = "./photos/bmw3.jpeg";
     box4.src = "./photos/bmw4.jpeg";
@@ -176,6 +178,7 @@ const porsche = document.getElementById("porsche");
 porsche.addEventListener("click", () =>{
     home.style.background = "url(./photos/porsche2.webp)";
     interior.src = "./photos/pinterior.jpeg";
+
     //fetching audi data
     fetch("http://localhost:3000/values/3")
     .then(function(resp){
@@ -186,6 +189,7 @@ porsche.addEventListener("click", () =>{
     price1.innerHTML = data.price;
     box1.src = data.image;
     })
+
     box2.src = "./photos/p2.jpg";
     box3.src = "./photos/p3.jpg";
     box4.src = "./photos/p4.jpg";
