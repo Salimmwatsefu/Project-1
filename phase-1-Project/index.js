@@ -99,6 +99,8 @@ benz.addEventListener("click", () =>{
     home.style.background = "url(./photos/cClass.jpg)";
     interior.src = "./photos/C-Interior.jpg";
 
+
+    box1.src = "./photos/merc1.jpg"
     box2.src = "./photos/merc2.jpg";
     box3.src = "./photos/merc3.jpeg";
     box4.src = "./photos/merc4.jpeg";
@@ -109,7 +111,7 @@ benz.addEventListener("click", () =>{
     interiorText.innerHTML = "BEAUTIFUL DESIGN, CUTTING EDGE TECHNOLOGY";
     bigHeading.innerHTML = "AVAILABLE CARS";
     //fetching data from db.json
-    fetch("http://localhost:3000/values/1")
+    /*fetch("http://localhost:3000/values/1")
     .then(function(resp){
     return resp.json();
     })
@@ -117,9 +119,11 @@ benz.addEventListener("click", () =>{
     model1.innerHTML = data.name;
     price1.innerHTML = data.price;
     box1.src = data.image;
-    });
+    });*/
 
     //continuation without fetching data
+    model1.innerHTML = "2015 CLA 200";
+    price1.innerHTML = "KES 7,800,000"
     model2.innerHTML = "2015 G WAGON "
     price2.innerHTML = "KES 16,799,999";
     model3.innerHTML = "2015 C 200";
@@ -141,7 +145,7 @@ bmw.addEventListener("click", () =>{
     interior.src = "./photos/binterior.jpg";
 
     //fetching BMW data drom db.json
-    fetch("http://localhost:3000/values/2")
+    /*fetch("http://localhost:3000/values/2")
     .then(function(resp){
     return resp.json();
     })
@@ -149,8 +153,9 @@ bmw.addEventListener("click", () =>{
     model1.innerHTML = data.name;
     price1.innerHTML = data.price;
     box1.src = data.image;
-    });
+    });*/
 
+    box1.src = "./photos/bmw1.jpeg";
     box2.src = "./photos/bmw2.jpeg";
     box3.src = "./photos/bmw3.jpeg";
     box4.src = "./photos/bmw4.jpeg";
@@ -160,6 +165,8 @@ bmw.addEventListener("click", () =>{
     line2.innerHTML = "THE NEW BMW X7 M60i xDRIVE." +"<br/>" + "ALL ELECTRIC"
     interiorText.innerHTML = "THE PERFECT COCKPIT";
     bigHeading.innerHTML = "AVAILABLE CARS";
+    model1.innerHTML = "F36 BMW 435i";
+    price1.innerHTML = "KES 5,200,000";
     model2.innerHTML = "2015 BMW 523i";
     price2.innerHTML = "KES 2,890,000";
     model3.innerHTML = "2015 BMW X3 XDrive";
@@ -180,7 +187,7 @@ porsche.addEventListener("click", () =>{
     interior.src = "./photos/pinterior.jpeg";
 
     //fetching audi data
-    fetch("http://localhost:3000/values/3")
+    /*fetch("http://localhost:3000/values/3")
     .then(function(resp){
     return resp.json();
     })
@@ -188,8 +195,9 @@ porsche.addEventListener("click", () =>{
     model1.innerHTML = data.name;
     price1.innerHTML = data.price;
     box1.src = data.image;
-    });
+    });*/
 
+    box1.src = "./photos/p1.jpeg"
     box2.src = "./photos/p2.jpg";
     box3.src = "./photos/p3.jpg";
     box4.src = "./photos/p4.jpg";
@@ -199,6 +207,8 @@ porsche.addEventListener("click", () =>{
     line2.innerHTML = "Turbo GT";
     interiorText.innerHTML = "A full equiped interior";
     bigHeading.innerHTML = "AVAILABLE CARS";
+    model1.innerHTML = "2015 PORSCHE CAYENNE TURBO";
+    price1.innerHTML = "KES 6,250,000"
     model2.innerHTML = "2018 PORSCHE CAYENNE";
     price2.innerHTML = "KES 8,999,999";
     model3.innerHTML = "2016 PORSCHE CAYENNE";
