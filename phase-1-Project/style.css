@@ -154,7 +154,7 @@ div{
 }
 /* cars on sale */
 .container .ibox img {
-    width: 1;
+    width: 500px;
 
 }
 .car-container{
@@ -172,6 +172,7 @@ div{
     flex-direction: column ;
     background: var(--bg-color);
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(255, 254, 254, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 }
 .car-container .box img{
     width: 100%;
@@ -180,8 +181,8 @@ div{
     object-position: center;
     margin-bottom: 1rem;
 }
-.car-container .box img:hover{
-    transform: scale(1.2);
+.car-container .box:hover{
+    transform: scale(1.1);
     transition: 0.5s;
 }
 .car-container .box h3{
@@ -209,3 +210,238 @@ div{
     color: var(--main-color);
     text-decoration: underline;
 }
+
+/* form styles */
+
+/* Styles for the modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 55, 69, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  /* Styles for the modal container */
+  .modal-container {
+    width: 900px;
+    padding: 10px;
+  }
+  
+  .modal-container button.close-button {
+    position: absolute;
+    top: 45px;
+    right: 190px;
+    background-color: #0b4d99 ;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right
+  }
+  
+  .modal-container button.close-button:hover {
+    color: #333;
+  }
+  
+  /* Styles for the purchase form within the modal
+
+
+  .purchase-form label {
+    display: block;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color: black;
+    background-color: #f9f9f9;
+  }
+  
+  .purchase-form input[type="text"],
+  .purchase-form input[type="email"],
+  .purchase-form input[type="tel"],
+  .purchase-form textarea {
+    width: 50%;
+    padding: 8px;
+    padding-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #d1d1d1;
+    display: flex;
+  }
+  
+  .purchase-form textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .purchase-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .purchase-form button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+   */
+
+   .fcontainer {
+    display: flex;
+    height: 90vh;
+  }
+  
+
+  .left {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+    animation-name: left;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+  }
+  
+  .right {
+    flex: 1;
+    transition: 1s;
+    background-image: url(https://images.unsplash.com/photo-1542282088-fe8426682b8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGF1ZGl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=2250&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  
+  
+  .heade > h2 {
+    margin: 0;
+    color: #0b4d99;
+  }
+  
+  .heade > h4 {
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .form {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: -40px;
+  }
+  
+  
+  .form-field {
+    height: 46px;
+    padding: 0 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    outline: 0;
+    transition: .2s;
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  .form-field:focus {
+    border-color: #0f7ef1;
+  }
+  
+  .form > button {
+    padding: 12px 10px;
+    border: 0;
+    background: linear-gradient(to right, #0b4d99 0%,#0097ff 100%); 
+    border-radius: 3px;
+    margin-top: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: 'Rubik', sans-serif;
+  }
+  
+  .animation {
+    animation-name: move;
+    animation-duration: .4s;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+  }
+  
+  .a1 {
+    animation-delay: 2s;
+  }
+  
+  .a2 {
+    animation-delay: 2.1s;
+  }
+  
+  .a3 {
+    animation-delay: 2.2s;
+  }
+  
+  .a4 {
+    animation-delay: 2.3s;
+  }
+  
+  .a5 {
+    animation-delay: 2.4s;
+  }
+  
+  .a6 {
+    animation-delay: 2.5s;
+  }
+  
+  @keyframes move {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-40px);
+    }
+  
+    100% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes left {
+    0% {
+      opacity: 0;
+      width: 0;
+    }
+  
+    100% {
+      opacity: 1;
+      padding: 20px 40px;
+      width: 440px;
+    }
+  }
+
+
+
+
+  .confirmation-message {
+    position: fixed;
+    top: 50px; /* Adjust the top position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff; /* White background */
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Ensures the message is above other content */
+    color: #000;
+  }

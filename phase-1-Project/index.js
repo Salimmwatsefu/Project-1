@@ -2,6 +2,7 @@ const baseUrl = "http://localhost:3000/values/1";;
 
 const header = document.getElementById("header");
 const interior = document.querySelector("img")
+const card = document.querySelector(".car-container")
 const box1 = document.querySelector("#box1 img");
 const box2 = document.querySelector("#box2 img");
 const box3 = document.querySelector("#box3 img");
@@ -25,7 +26,64 @@ const price5 = document.querySelector("#box5 span");
 const price6 = document.querySelector("#box6 span");
 const message = document.querySelector("#message textarea");
 const bigHeading = document.querySelector(".heading span");
+const bigHeading1 = document.querySelector(".heading h2");
+const bigHeading2 = document.querySelector(".heading p");
 const interiorText = document.querySelector(".ibox h4");
+
+// Function to hide all the elements except the home section
+function showHomePage() {
+    document.querySelectorAll(".page").forEach((page) => {
+        page.style.display = "none";
+    });
+
+    home.style.display = "block";
+    interior.style.display = "none";
+    card.style.display = "none";
+    interiorText.style.display = "none";
+    bigHeading.style.display = "none"
+    bigHeading1.style.display = "none"
+    bigHeading2.style.display = "none"
+    
+
+    // Hide the blog tabs specifically for the home page
+    document.querySelectorAll(".blog-tab").forEach((tab) => {
+        tab.style.display = "none";
+    });
+}
+  
+  // Function to show all the elements for other pages
+  function showOtherPages() {
+    document.querySelectorAll(".page").forEach((page) => {
+        page.style.display = "block";
+    });
+
+    interior.style.display = "block"
+    card.style.display = "flex"
+    bigHeading.style.display = "block"
+    bigHeading1.style.display = "block"
+    bigHeading2.style.display = "block"
+
+
+    // Show the blog tabs for other pages
+    document.querySelectorAll(".blog-tab").forEach((tab) => {
+        tab.style.display = "block";
+    });
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    // Call the function to show the home page initially
+    showHomePage();
+  
+    // Add event listeners to the navigation links
+    document.querySelector("#page1").addEventListener("click", showHomePage);
+    document.querySelector("#mercedes").addEventListener("click", showOtherPages);
+    document.querySelector("#bmw").addEventListener("click", showOtherPages);
+    document.querySelector("#porsche").addEventListener("click", showOtherPages);
+    document.querySelector("#audi").addEventListener("click", showOtherPages);
+    document.querySelector("#vw").addEventListener("click", showOtherPages);
+  
+  });
+  
 
 document.addEventListener("DOMContentLoaded", () => {
 });
@@ -53,17 +111,101 @@ blueButton.addEventListener("click", function(e){
     e.preventDefault()
 })
 //purchase button
-const purchaseButton = document.querySelectorAll(".box .btn");
-console.log(purchaseButton)
-function purchaseArea(e)
-{
-    alert("SORRY, WE'RE TEMPORARILY DOWN FOR MAINTENANCE! PLEASE CHECK BACK SOON")
+//handle submit
+function handleFormSubmit(event) {
+    event.preventDefault();
+  
+    // Collect form input values
+    const fullName = event.target.querySelector('input[type="text"]').value;
+    const emailAddress = event.target.querySelector('input[type="email"]').value;
+    const phoneNumber = event.target.querySelector('input[type="tel"]').value;
+  
+    // Here you can send the form data to a server using fetch or perform any other necessary actions.
+    // For simplicity, let's assume the form data is sent to the server successfully.
+  
+    // Close the modal
+    const modalOverlay = document.querySelector(".modal-overlay");
+    modalOverlay.remove();
+  
+    // Display the confirmation message
+    const confirmationMessage = document.createElement("div");
+    confirmationMessage.classList.add("confirmation-message");
+    confirmationMessage.innerText = `Thank you, ${fullName}! An agent will be in touch with you shortly.`;
+  
+    // Append the confirmation message to the body of the page
+    document.body.appendChild(confirmationMessage);
+  
+    // Remove the confirmation message after a few seconds (optional)
+    setTimeout(() => {
+      confirmationMessage.remove();
+    }, 5000); // Remove the message after 5 seconds (adjust the time as needed)
+  }
+  
+//
+function purchaseArea(e) {
     e.preventDefault();
-};
+  
+    // Create the modal overlay
+    const modalOverlay = document.createElement("div");
+    modalOverlay.classList.add("modal-overlay");
+  
+    // Create the modal container
+    const modalContainer = document.createElement("div");
+    modalContainer.classList.add("modal-container");
+  
+    // Create the close button
+    const closeButton = document.createElement("button");
+    closeButton.classList.add("close-button");
+    closeButton.innerText = "x";
+  
+    // Create the form element
+    const purchaseForm = document.createElement("form");
+    purchaseForm.classList.add("purchase-form");
+  
+    // Add input fields and labels to the form
+    purchaseForm.innerHTML = `
+    <div class="fcontainer">
+    <div class="left">
+    <div class="heade">
+      <h2 class="animation a1">Welcome Back</h2>
+      <h4 class="animation a2">To get in touch with our agents, please fill in the form below</h4>
+    </div>
+    <div class="form">
+    <input type="text" class="form-field animation a3" placeholder="Full Name">
 
-for (i = 0; i < purchaseButton.length; i++) {
-    purchaseButton[i].addEventListener("click", purchaseArea);
-}
+      <input type="email" class="form-field animation a3" placeholder="Email Address">
+      <input type="tel" class="form-field animation a4" placeholder="Phone Number">
+      <button type="submit" class="animation a6">Submit</button>
+    </div>
+  </div>
+  <div class="right"></div>
+  </div>
+      
+    `;
+  
+    // Append the close button and form to the modal container
+    modalContainer.appendChild(closeButton);
+    modalContainer.appendChild(purchaseForm);
+  
+    // Append the modal container to the modal overlay
+    modalOverlay.appendChild(modalContainer);
+  
+    // Append the modal overlay to the body of the page
+    document.body.appendChild(modalOverlay);
+  
+    // Event listener to close the modal when the close button is clicked
+    closeButton.addEventListener("click", function () {
+      modalOverlay.remove();
+    });
+    purchaseForm.addEventListener("submit", handleFormSubmit, { once: true });
+  }
+  
+  // Attach the event listener to the purchase buttons
+  const purchaseButton = document.querySelectorAll(".box .btn");
+  purchaseButton.forEach((button) => {
+    button.addEventListener("click", purchaseArea);
+  });
+  
 
 //home page
 const page1 = document.getElementById("page1")
