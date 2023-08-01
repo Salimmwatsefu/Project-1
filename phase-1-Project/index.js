@@ -2,6 +2,7 @@ const baseUrl = "http://localhost:3000/values/1";;
 
 const header = document.getElementById("header");
 const interior = document.querySelector("img")
+const interior2 = document.querySelector(".ibox2 .img")
 const card = document.querySelector(".car-container")
 const box1 = document.querySelector("#box1 img");
 const box2 = document.querySelector("#box2 img");
@@ -44,8 +45,6 @@ function showHomePage() {
     bigHeading1.style.display = "none"
     bigHeading2.style.display = "none"
     
-
-    // Hide the blog tabs specifically for the home page
     document.querySelectorAll(".blog-tab").forEach((tab) => {
         tab.style.display = "none";
     });
@@ -56,25 +55,20 @@ function showHomePage() {
     document.querySelectorAll(".page").forEach((page) => {
         page.style.display = "block";
     });
-
     interior.style.display = "block"
     card.style.display = "flex"
     bigHeading.style.display = "block"
     bigHeading1.style.display = "block"
     bigHeading2.style.display = "block"
 
-
-    // Show the blog tabs for other pages
     document.querySelectorAll(".blog-tab").forEach((tab) => {
         tab.style.display = "block";
     });
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-    // Call the function to show the home page initially
     showHomePage();
   
-    // Add event listeners to the navigation links
     document.querySelector("#page1").addEventListener("click", showHomePage);
     document.querySelector("#mercedes").addEventListener("click", showOtherPages);
     document.querySelector("#bmw").addEventListener("click", showOtherPages);
@@ -91,8 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
 //search-box
 const search = document.querySelector(".search-box");
 const search1 = document.querySelector(".search-box #search1");
+
 function Search(item){
-let collection = document.getElementsByClassName("cars");
+let collection = document.getElementsByClassName("box");
 for (i = 0; i < collection.length; i++){
     if (((collection[i].innerHTML).toLowerCase()).indexOf(item) > -1) {
         collection[i].style.display = "block";
@@ -104,12 +99,19 @@ for (i = 0; i < collection.length; i++){
 document.querySelector("#search-icon").addEventListener("click", function(){
     search.classList.toggle("active");
 })
+
+
+
 //discover now button
 const blueButton = document.querySelector(".home-text a");
-blueButton.addEventListener("click", function(e){
-    alert("SORRY, WE'RE TEMPORARILY DOWN FOR MAINTENANCE! PLEASE CHECK BACK SOON");
-    e.preventDefault()
-})
+const bmw2 = document.getElementById("bmw");
+
+blueButton.addEventListener("click", function(e) {
+    e.preventDefault();
+    const clickEvent = new MouseEvent("click");
+    bmw2.dispatchEvent(clickEvent);
+});
+
 //purchase button
 //handle submit
 function handleFormSubmit(event) {
@@ -120,8 +122,6 @@ function handleFormSubmit(event) {
     const emailAddress = event.target.querySelector('input[type="email"]').value;
     const phoneNumber = event.target.querySelector('input[type="tel"]').value;
   
-    // Here you can send the form data to a server using fetch or perform any other necessary actions.
-    // For simplicity, let's assume the form data is sent to the server successfully.
   
     // Close the modal
     const modalOverlay = document.querySelector(".modal-overlay");
@@ -137,11 +137,16 @@ function handleFormSubmit(event) {
   
     // Remove the confirmation message after a few seconds (optional)
     setTimeout(() => {
+      confirmationMessage.classList.add('show');
+  }, 100); // Adjust the delay as needed
+  
+  // Remove the confirmation message after a few seconds (optional)
+  setTimeout(() => {
       confirmationMessage.remove();
-    }, 5000); // Remove the message after 5 seconds (adjust the time as needed)
+  }, 5000); 
   }
   
-//
+//purchase button
 function purchaseArea(e) {
     e.preventDefault();
   
